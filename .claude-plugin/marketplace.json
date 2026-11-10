@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+	"name": "bluefyn-design-skills",
+	"owner": {
+		"name": "Bluefyn"
+	},
+	"metadata": {
+		"description": "Bluefyn's design skills for Claude Code."
+	},
+	"plugins": [
+		{
+			"name": "bluefyn",
+			"source": "./",
+			"description": "The Bluefyn brand book and a design method, one pagers from any text, and the unslop and bro writing skills."
+		}
+	]
+}
