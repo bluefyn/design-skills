@@ -497,7 +497,9 @@ def init_kit(target):
     os.makedirs(target, exist_ok=True)
     shutil.copy2(os.path.abspath(__file__), os.path.join(target, "one_pager.py"))
     shutil.copy2(os.path.join(BRAND_DIR, "brand.py"), os.path.join(target, "brand.py"))
-    shutil.copytree(b.ASSETS, os.path.join(target, "assets"))
+    # The kit takes what the template uses. The ready-made brand files (assets/brand) stay in the skill.
+    shutil.copytree(b.ASSETS, os.path.join(target, "assets"),
+                    ignore=lambda folder, names: ["brand"] if os.path.samefile(folder, b.ASSETS) else [])
     example = os.path.join(os.path.dirname(HERE), "examples", "acme.json")
     if os.path.isfile(example):
         shutil.copy2(example, os.path.join(target, "content.json"))

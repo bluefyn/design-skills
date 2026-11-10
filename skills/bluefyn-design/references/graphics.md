@@ -57,6 +57,13 @@ customer's data in a drawing.
 | `b.slab(w, h, x0, y0, length, ...)` | A long block of records seen from the front | Brand book graphics page. Tried on the one pager and removed as too loud |
 | `b.slanted_field(w, h, ...)`, `b.discs(w, h, ...)` | A turned dark field; notched discs | Not used in an approved page yet |
 
+## Finished patterns
+
+`assets/brand/patterns/` has five finished patterns as 1600 x 800 SVG files: the stream on blue and on
+paper, the tower on night and on paper, and a folded sheet of records on blue. Reach for one of these
+first when a piece needs a background or a hero image at about that shape. `b.brand_file()` returns the
+path and `b.brand_uri()` a data URI. `assets.md` describes each file and what to check when you place it.
+
 ## Choosing one
 
 - One hero drawing per page. The others stay small or stay out.

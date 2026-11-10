@@ -80,6 +80,22 @@ The brand in short:
   banner above.
 - **Layout.** A shared grid, square corners, hairlines, and a fine grain on every ground.
 
+## Brand files
+
+The finished brand files come with the skill, in
+[skills/bluefyn-design/assets/brand](skills/bluefyn-design/assets/brand), so Claude hands over the real
+file instead of drawing a new one:
+
+| Folder | What is in it |
+| --- | --- |
+| `logo/` | The logo, the symbol, a symbol for small sizes and the wordmark, in ink, white and blue, as SVG, PNG and PDF |
+| `avatars/` | Profile pictures for LinkedIn, Slack and X, on blue, night and paper |
+| `banners/` | Header images for a LinkedIn page, a LinkedIn profile and an X profile |
+| `patterns/` | Five vector patterns at 1600 x 800: the stream and the tower of records |
+
+[assets.md](skills/bluefyn-design/references/assets.md) lists every file with its size and use.
+[BRAND.md](BRAND.md) says what you can and cannot do with them.
+
 ## Fonts
 
 The brand uses two typefaces. Geist sets every word, at weight 400. Arial sets data: amounts, IDs and
@@ -176,6 +192,10 @@ Other design work:
 
 > Draw the cube of records as an SVG, 300 points wide.
 
+> Give me the white logo as a PNG and the X header on the night ground.
+
+> Use the tower pattern as the background of this title slide.
+
 Writing:
 
 > /bluefyn-unslop this PR description
@@ -230,8 +250,10 @@ skills/
     references/brand-book.pdf     the illustrated brand book
     references/frontend-design.md the design method
     references/graphics.md        the brand drawings and how to draw them
+    references/assets.md          the ready-made brand files and which one to pick
     scripts/brand.py              colors, logo and drawings as SVG
     assets/                       logo, Geist font (woff2 and ttf), tokens.css, grain and texture images
+    assets/brand/                 logo files, profile pictures, banners and patterns, ready to use
   bluefyn-one-pager/
     SKILL.md                      how Claude turns text into a one pager
     references/content-schema.md  every field of the content file and how much text fits

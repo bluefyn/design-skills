@@ -67,6 +67,9 @@ Body copy is 9pt or larger. Short supporting lines may be smaller: figure descri
 
 - Two parts: the symbol (four fins set as a B) and the wordmark. Use `assets/bluefyn-logo.svg` through
   `brand.logo()`, `brand.symbol()` or `brand.wordmark()`. Never retype the wordmark or redraw the symbol.
+- The same artwork is in `assets/brand/logo/` as files: logo, symbol and wordmark, in ink, white and blue,
+  as SVG, PNG and PDF. `symbol-small-sizes` has wider gaps between the fins for favicons and other very
+  small uses. `assets.md` lists them, with the profile pictures and banners made from them.
 - One color from the palette: ink on paper, white on navy, night or blue.
 - Clear space: the cap height of the B on every side. The symbol alone keeps a quarter of its height.
 - Smallest logo is 15px tall. Below that, use the symbol. Smallest symbol is 16px.

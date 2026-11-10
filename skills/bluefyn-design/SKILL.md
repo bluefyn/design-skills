@@ -26,6 +26,8 @@ Read these, in this order. They are short.
    here whole. The next section says how to apply it under a fixed brand.
 3. `references/graphics.md`, when the piece needs a drawing: what each brand graphic is and how to draw it
    with `scripts/brand.py`.
+4. `references/assets.md`, when the piece needs a logo file, a profile picture, a social banner or a
+   background pattern: the finished files in `assets/brand/` and which one to pick.
 
 When the job is a one pager through the bluefyn-one-pager template, this file and `brand.md` are enough:
 the template has already made the layout decisions.
@@ -63,11 +65,16 @@ For Bluefyn those choices are made. Use the method like this:
   these files or embed it with `b.geist_face()`. Do not rely on Geist being installed on the reader's
   machine, and do not substitute Inter, Helvetica or a system font. If Geist does not load, the piece is
   not finished: fix the font before you show it. Arial is the data face and needs no file.
-- **Logo.** `assets/bluefyn-logo.svg`, or `b.logo()`, `b.symbol()` and `b.wordmark()` in any palette color.
-  Never retype or redraw it.
+- **Logo.** In HTML, `b.logo()`, `b.symbol()` and `b.wordmark()` draw it in any palette color. As a file,
+  take it from `assets/brand/logo/`, which has the logo, the symbol, a symbol for small sizes and the
+  wordmark, each in ink, white and blue, as SVG, PNG and PDF. Never retype or redraw it.
+- **Ready-made files.** `assets/brand/` also holds the profile pictures (LinkedIn, Slack, X), the header
+  banners (LinkedIn page, LinkedIn profile, X) and five vector patterns. When someone asks for one of
+  these, hand over the file instead of building a new one. `b.brand_file()`, `b.brand_files()` and
+  `b.brand_uri()` find them, and `references/assets.md` lists every file.
 - **Graphics.** `scripts/brand.py` draws them as SVG: digit fields with records and verdict marks, the cube
-  of records, the plate stack, the scan band, the ellipses, the record texture. Use one hero graphic per
-  piece.
+  of records, the plate stack, the scan band, the ellipses, the record texture. `assets/brand/patterns/`
+  has finished ones at 1600 x 800. Use one hero graphic per piece.
 - **Textures.** `assets/grain-light.png` and `grain-dark.png` are the fine grain for paper and dark
   grounds. `assets/texture.png` is the record texture for navy.
 - **Documents and print.** Lay the page out in HTML with fixed point sizes and print it with a headless

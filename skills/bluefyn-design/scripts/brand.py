@@ -289,6 +289,37 @@ def grain(kind):
     return data_uri(f"grain-{kind}.png", "image/png")
 
 
+# ------------------------------------------------ ready-made brand files
+# The design team's finished exports: logo files, profile pictures, banners and vector patterns.
+# references/assets.md says what each one is for. A local one pager kit does not carry them.
+KIT = os.path.join(ASSETS, "brand")
+_MIME = {".svg": "image/svg+xml", ".png": "image/png", ".jpg": "image/jpeg", ".pdf": "application/pdf"}
+
+
+def brand_files(under=""):
+    """Every ready-made file under a folder of assets/brand ("logo", "avatars/x", "banners", "patterns"),
+    as sorted paths relative to assets/brand. With no argument, all of them."""
+    root = os.path.join(KIT, under)
+    found = []
+    for folder, _, names in os.walk(root):
+        found += [os.path.relpath(os.path.join(folder, n), KIT) for n in names if not n.startswith(".")]
+    return sorted(found)
+
+
+def brand_file(rel):
+    """The absolute path of one ready-made file, for example "logo/svg/bluefyn-logo-ink.svg"."""
+    path = os.path.join(KIT, rel)
+    if not os.path.isfile(path):
+        raise FileNotFoundError(f"no brand file {rel!r} in {KIT}. brand_files() lists what is there.")
+    return path
+
+
+def brand_uri(rel):
+    """One ready-made file as a data URI, for an <img> or a CSS background in self-contained HTML."""
+    with open(brand_file(rel), "rb") as fh:
+        return f"data:{_MIME[os.path.splitext(rel)[1].lower()]};base64," + base64.b64encode(fh.read()).decode("ascii")
+
+
 # ------------------------------------------------- more of the guide's graphics
 REC_TX_MATCH = (["TX-001 / CT-001:4.2", "ST-009 LINE 128", "MATCH"], "match")
 REC_FX_MATCH = (["FX-002 / EUR-USD", "MID 1.100000", "MATCH"], "match")
@@ -415,3 +446,18 @@ def slab(w, h, x0, y0, length, rise=3.5, depth=(46.0, -27.0), rows_deep=15, fs=6
              f'<g clip-path="url(#{uid}-f)">{field(length, front_h, fs, rng, records, paper=shades[1], ink=ink, rec_ink=rec_ink, uid=uid + "-f")}</g></g>')
     o.append("</svg>")
     return "".join(o)
+
+
+if __name__ == "__main__":
+    # List the ready-made brand files with their pixel sizes.
+    import struct
+    for rel in brand_files():
+        size = ""
+        with open(brand_file(rel), "rb") as fh:
+            head = fh.read(600)
+        if rel.endswith(".png"):
+            size = "%d x %d" % struct.unpack(">II", head[16:24])
+        elif rel.endswith(".svg"):
+            m = re.search(r'<svg[^>]*?\swidth="([\d.]+)"[^>]*?\sheight="([\d.]+)"', head.decode("utf-8", "replace"))
+            size = f"{m.group(1)} x {m.group(2)}" if m else ""
+        print(f"{rel:88s} {size}")
