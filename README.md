@@ -49,6 +49,13 @@ cd design-skills && ./install.sh
 
 Start a new Claude Code session and type `/bluefyn`. The four skills appear in the menu.
 
+Or make a design workspace with one command and no clone. It is a folder with the skills, the brand
+files and a one pager builder, ready to open in Claude Code:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/bluefyn/design-skills/main/install.sh | sh -s -- --workspace ~/bluefyn-design
+```
+
 ## The brand book
 
 `bluefyn-design` carries the brand book as rules Claude reads and as a PDF for people. These are eight of
@@ -154,6 +161,42 @@ git pull && ./install.sh --force
 ```
 
 To uninstall, delete the four `bluefyn-*` folders from `~/.claude/skills`.
+
+### Make a design workspace
+
+A workspace is a folder set up for making Bluefyn pieces with Claude on your computer. The skills are
+installed inside it, so they are active whenever Claude runs there, and they read the brand files from
+the same folder.
+
+```bash
+./install.sh --workspace ~/bluefyn-design
+```
+
+Without a clone, pipe the installer from GitHub. It downloads the pack, builds the workspace and removes
+the download:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/bluefyn/design-skills/main/install.sh | sh -s -- --workspace ~/bluefyn-design
+```
+
+The workspace looks like this:
+
+```
+bluefyn-design/
+  .claude/skills/   the four skills
+  brand/            logo, profile pictures, banners, patterns, the Geist font, tokens.css, brand-book.pdf
+  content/          the text of each one pager, with the Acme Pay example
+  out/              what gets built
+  build.sh          builds a one pager: ./build.sh content/acme.json
+  CLAUDE.md         tells Claude how to work in the folder
+```
+
+`brand/` links to the files inside the `bluefyn-design` skill, so there is one copy of each and the
+skills and the folder never disagree. Open the folder in Claude Code and ask for a one pager, a logo
+file or a slide. Finished files land in `out/`.
+
+To update a workspace, run the same command with `--force`. It replaces the skills, `brand/` and
+`build.sh`, and leaves `content/`, `out/` and `CLAUDE.md` alone.
 
 ### Install as a plugin
 
@@ -261,8 +304,9 @@ skills/
     examples/                     the Acme Pay sample, as JSON, PDF and image
   bluefyn-unslop/SKILL.md
   bluefyn-bro/SKILL.md
+workspace/                        the CLAUDE.md, README and build script of a design workspace
 docs/                             the banner, logo and screenshots in this README
-install.sh
+install.sh                        installs the skills, or makes a design workspace
 ```
 
 `bluefyn-one-pager` reads its colors, logo and font from `bluefyn-design`, so install them together.
