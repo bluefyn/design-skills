@@ -2,3 +2,7 @@
 __pycache__/
 *.pyc
 /out/
+
+# dream build output and picture cache
+.cache/
+skills/bluefyn-dream/examples/*/out/

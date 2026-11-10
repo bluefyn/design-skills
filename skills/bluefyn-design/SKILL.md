@@ -30,7 +30,8 @@ Read these, in this order. They are short.
    background pattern: the finished files in `assets/brand/` and which one to pick.
 
 When the job is a one pager through the bluefyn-one-pager template, this file and `brand.md` are enough:
-the template has already made the layout decisions.
+the template has already made the layout decisions. When someone wants design options, use the
+bluefyn-dream skill, which builds three different concepts on these rules.
 
 `references/brand-book.pdf` is the illustrated brand book. Open it when you need to see a rule applied, or
 give it to a person who asks for the brand guide.

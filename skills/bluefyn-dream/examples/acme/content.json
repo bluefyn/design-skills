@@ -1,0 +1,117 @@
+{
+  "partner": "Acme Pay",
+  "meta": [
+    "Prepared for Acme Pay",
+    "Sample"
+  ],
+  "mode": "both",
+  "headline": "Every vendor and customer contract, owned, checked and billed correctly.",
+  "lede": "Acme Pay is a made-up payments company, used here to show the template. It runs on a stack of processors, banks and identity vendors, each on its own contract. Bluefyn sits as a layer above that stack, so Acme pays vendors correctly, bills customers correctly and sees all of it in one place.",
+  "told": {
+    "label": "What your team told us",
+    "rows": [
+      {
+        "figure": "40+",
+        "text": "vendor invoices a week, reviewed by hand"
+      },
+      {
+        "figure": "$120K",
+        "text": "overbilled by one vendor in a single quarter"
+      },
+      {
+        "figure": "Each launch",
+        "text": "adds new vendor terms and new customer pricing"
+      }
+    ]
+  },
+  "with": {
+    "label": "With Bluefyn",
+    "figure": "Every bill",
+    "text": "checked against contract on both sides, continuously"
+  },
+  "sides": {
+    "label": "Both sides of Acme's economics",
+    "note": "Read-only to start. Bluefyn never touches funds",
+    "columns": [
+      {
+        "title": "What Acme pays",
+        "mark": "Money out",
+        "sub": "Processors, banks, identity and infrastructure vendors",
+        "items": [
+          "Every contract, amendment and renewal owned in one place",
+          "Every vendor invoice checked against its contract",
+          "Monitored continuously, not at month end"
+        ]
+      },
+      {
+        "title": "What Acme bills",
+        "mark": "Money in",
+        "sub": "Customers on custom, usage-based contracts",
+        "items": [
+          "New products turned into billing rules from day one",
+          "Invoices built from usage, revenue shares and netting included",
+          "Unbilled usage caught before invoices go out"
+        ]
+      }
+    ]
+  },
+  "layer": {
+    "label": "A layer above",
+    "stack": [
+      "Bluefyn",
+      "Spend",
+      "ERP",
+      "CRM"
+    ],
+    "text": "Works alongside your spend tool, ERP and CRM. Nothing ripped out or replaced."
+  },
+  "flags": {
+    "label": "What our agents flag, before your team has to look",
+    "rows": [
+      [
+        "A vendor charges above contract",
+        "The amount, the clause and the evidence, ready to dispute"
+      ],
+      [
+        "Volume shifts at a vendor or customer",
+        "An alert before it moves you across a tier or minimum"
+      ],
+      [
+        "A contract nears renewal or expiry",
+        "Actual cost against contract, in time to renegotiate"
+      ],
+      [
+        "A customer is underbilled",
+        "The missing usage, found before the invoice goes out"
+      ]
+    ]
+  },
+  "closing": [
+    {
+      "label": "Who we are",
+      "text": "Bluefyn checks every fee you pay and every invoice you send against your contracts, and shows the transaction, the contract term and the math behind each finding."
+    },
+    {
+      "label": "Why now",
+      "text": "Every product Acme launches adds vendor terms on one side and customer pricing on the other. Putting the layer in now keeps both right from day one."
+    },
+    {
+      "label": "Also included",
+      "items": [
+        "Treasury forecasting",
+        "Account visibility",
+        "Reconciliation",
+        "AI token management"
+      ]
+    }
+  ],
+  "next": {
+    "label": "Next step",
+    "text": "A discovery call this week to map your vendor and customer contracts. Then we get to work.",
+    "contact": {
+      "name": "Alex Morgan",
+      "role": "Partnerships, Bluefyn",
+      "email": "alex@example.com"
+    }
+  }
+}

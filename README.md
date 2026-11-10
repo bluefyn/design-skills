@@ -5,14 +5,14 @@
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-0035A6" alt="License: MIT"></a>
   <img src="https://img.shields.io/badge/Claude%20Code-skills-00386D" alt="Claude Code skills">
-  <img src="https://img.shields.io/badge/skills-4-1C1919" alt="Four skills">
+  <img src="https://img.shields.io/badge/skills-6-1C1919" alt="Six skills">
   <img src="https://img.shields.io/badge/font-Geist-1C1919" alt="Font: Geist">
 </p>
 
 # Bluefyn design skills
 
-Four skills for [Claude Code](https://claude.com/claude-code), made by [Bluefyn](https://bluefyn.ai).
-Two of them make documents and pages in the Bluefyn brand. The other two make writing plainer.
+Six skills for [Claude Code](https://claude.com/claude-code), made by [Bluefyn](https://bluefyn.ai).
+Three of them design pages and documents in the Bluefyn brand. The other three write and edit the words.
 
 Give Claude your call notes and get back a one-page PDF that follows the brand book:
 
@@ -34,6 +34,8 @@ Acme Pay is a made-up company, and so are its figures. The page is built from
 | --- | --- | --- |
 | `bluefyn-design` | Holds the brand book (colors, type, logo, graphics, layout rules, what to leave out) and a design method for layout and copy. Claude uses it for any Bluefyn-branded piece. | Ask for a branded page, slide, poster or PDF, or type `/bluefyn-design` |
 | `bluefyn-one-pager` | Turns any text into a one-page PDF in the Bluefyn brand, light or dark. | Ask for a one pager, or type `/bluefyn-one-pager` |
+| `bluefyn-dream` | Designs three new and different pages from the same content, each in light and dark, from the brand's own drawings, textures and files. | Ask for design options or three versions, or type `/bluefyn-dream` |
+| `bluefyn-copywriter` | Turns notes, emails or documents into one pager content, and rewrites any text as plain business prose. | Ask Claude to write the copy, or type `/bluefyn-copywriter` |
 | `bluefyn-unslop` | Removes AI tells from prose, such as em dashes, filler and hype words. | Type `/bluefyn-unslop`, or ask for a final pass on some writing |
 | `bluefyn-bro` | Restates Claude's last answer in plain language. | Type `/bluefyn-bro` |
 
@@ -47,7 +49,7 @@ git clone https://github.com/bluefyn/design-skills.git
 cd design-skills && ./install.sh
 ```
 
-Start a new Claude Code session and type `/bluefyn`. The four skills appear in the menu.
+Start a new Claude Code session and type `/bluefyn`. The six skills appear in the menu.
 
 Or make a design workspace with one command and no clone. It is a folder with the skills, the brand
 files and a one pager builder, ready to open in Claude Code:
@@ -55,6 +57,20 @@ files and a one pager builder, ready to open in Claude Code:
 ```bash
 curl -fsSL https://raw.githubusercontent.com/bluefyn/design-skills/main/install.sh | sh -s -- --workspace ~/bluefyn-design
 ```
+
+## Three designs from one content file
+
+`bluefyn-dream` designs three new pages for the same words, each in light and dark mode, and lays them
+out on one contact sheet. Each concept has its own structure and its own hero graphic, taken from what the
+brand already has: the drawings in `brand.py`, the textures, the records and the finished patterns. The
+build checks every page for fit, Geist, missing content and text on text. It also checks that the three
+differ from each other and from the examples.
+
+<p>
+  <img src="skills/bluefyn-dream/examples/acme/sheet.jpg" width="100%" alt="Three designs for Acme Pay, each in light and dark">
+</p>
+
+These three (Spine, Ledger and Tower) ship as examples. Every new dream has to design something other than these.
 
 ## The brand book
 
@@ -139,13 +155,13 @@ The skills need no Python packages and install nothing else.
    git clone https://github.com/bluefyn/design-skills.git
    ```
 
-2. Run the installer from the repo folder. It copies the four skills into `~/.claude/skills`.
+2. Run the installer from the repo folder. It copies the six skills into `~/.claude/skills`.
 
    ```bash
    cd design-skills && ./install.sh
    ```
 
-3. Start a new Claude Code session and type `/bluefyn`. The four skills appear in the menu.
+3. Start a new Claude Code session and type `/bluefyn`. The six skills appear in the menu.
 
 To install into one repo instead, so that everyone who works in it gets the skills:
 
@@ -160,7 +176,7 @@ with `--force`:
 git pull && ./install.sh --force
 ```
 
-To uninstall, delete the four `bluefyn-*` folders from `~/.claude/skills`.
+To uninstall, delete the six `bluefyn-*` folders from `~/.claude/skills`.
 
 ### Make a design workspace
 
@@ -183,7 +199,7 @@ The workspace looks like this:
 
 ```
 bluefyn-design/
-  .claude/skills/   the four skills
+  .claude/skills/   the six skills
   brand/            logo, profile pictures, banners, patterns, the Geist font, tokens.css, brand-book.pdf
   content/          the text of each one pager, with the Acme Pay example
   out/              what gets built
@@ -238,6 +254,18 @@ Other design work:
 > Give me the white logo as a PNG and the X header on the night ground.
 
 > Use the tower pattern as the background of this title slide.
+
+Design options:
+
+> Dream up three different designs for the Acme Pay one pager, light and dark.
+
+> I like the Ledger direction. Make the headline larger and rebuild it.
+
+Copy:
+
+> Here are my call notes with Northwind. Write the one pager copy.
+
+> /bluefyn-copywriter make this email sound professional: ...
 
 Writing:
 
@@ -302,6 +330,14 @@ skills/
     references/content-schema.md  every field of the content file and how much text fits
     scripts/one_pager.py          content file in, PDF and preview out
     examples/                     the Acme Pay sample, as JSON, PDF and image
+  bluefyn-dream/
+    SKILL.md                      how Claude designs three different pages
+    scripts/dream.py              starts a dream, builds and checks the concepts, makes the contact sheet
+    examples/acme/                three finished concepts, their plan and contact sheet
+  bluefyn-copywriter/
+    SKILL.md                      how Claude writes one pager content and plain business prose
+    references/voice.md           the Bluefyn voice, with before and after examples
+    scripts/copy_check.py         checks a content file or any text for length and AI patterns
   bluefyn-unslop/SKILL.md
   bluefyn-bro/SKILL.md
 workspace/                        the CLAUDE.md, README and build script of a design workspace
@@ -309,7 +345,8 @@ docs/                             the banner, logo and screenshots in this READM
 install.sh                        installs the skills, or makes a design workspace
 ```
 
-`bluefyn-one-pager` reads its colors, logo and font from `bluefyn-design`, so install them together.
+`bluefyn-one-pager` reads its colors, logo and font from `bluefyn-design`, and `bluefyn-dream` uses both,
+so install the pack together.
 
 ## Use it for your own brand
 

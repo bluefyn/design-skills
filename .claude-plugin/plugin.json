@@ -1,8 +1,8 @@
 {
 	"$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
 	"name": "bluefyn",
-	"version": "1.4.0",
-	"description": "Bluefyn's design skills for Claude Code. The brand book and a design method, one pagers from any text, and two writing skills.",
+	"version": "1.5.0",
+	"description": "Bluefyn's design skills for Claude Code. The brand book and a design method, one pagers from any text, three design options from one content file, a copywriter, and two writing skills.",
 	"author": {
 		"name": "Bluefyn"
 	},
@@ -12,6 +12,7 @@
 		"bluefyn",
 		"brand",
 		"one-pager",
+		"copywriting",
 		"design",
 		"unslop"
 	],

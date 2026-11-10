@@ -32,6 +32,10 @@ to choose another.
 
 ### 1. Read the source and find the page in it
 
+If the bluefyn-copywriter skill is installed, use it for steps 1 to 3. It writes the content file in the
+Bluefyn voice and checks it. Come back here to build. For three different designs of the same content
+instead of the standard template, use the bluefyn-dream skill.
+
 The source can be anything: a finished draft, rough notes, an email thread, a call summary, a long
 document, a web page, an old PDF. A one pager answers eight questions, and each has a place in the
 template. Go through the source and find the answer to each.

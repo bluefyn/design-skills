@@ -72,7 +72,7 @@ fi
 
 # ---------------------------------------------------------------- workspace
 # brand/ and build.sh belong to the installer and follow the pack on --force.
-# CLAUDE.md, README.md, content/ and out/ belong to the person and are never overwritten.
+# CLAUDE.md, README.md, content/, dreams/ and out/ belong to the person and are never overwritten.
 
 # brand/ is a visible door to the one pack the skills read, so there is a single copy of every file.
 # Where links are not possible, the files are copied instead.
@@ -111,7 +111,7 @@ for file in CLAUDE.md README.md; do
   fi
 done
 
-mkdir -p "$WS/content" "$WS/out"
+mkdir -p "$WS/content" "$WS/dreams" "$WS/out"
 if [ -e "$WS/content/acme.json" ]; then
   echo "kept      content/acme.json"
 else
