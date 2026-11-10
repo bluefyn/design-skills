@@ -40,6 +40,9 @@ clear verdicts, and nothing asks to be taken on faith.
 
 - **Geist, weight 400, for every word.** Size and tracking carry the hierarchy. No bold, no italics.
   (The Figma guide sets Inter. Documents and this pack use Geist.)
+- **Geist travels with the work.** The font files are in `assets/fonts/`. Web pages load the woff2, PDFs
+  embed it, and people who design in other tools install `Geist-Regular.ttf`. A piece that falls back to
+  another typeface is off brand, even if everything else is right.
 - **Arial for data only**: amounts, IDs, verdicts and marks, in capitals and figures, with tabular numbers
   and no kerning so digits keep their columns.
 - Headlines run tight (about -0.03em to -0.04em). Body text keeps normal tracking.

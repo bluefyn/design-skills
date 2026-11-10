@@ -58,7 +58,11 @@ For Bluefyn those choices are made. Use the method like this:
 - **Colors and type.** `assets/tokens.css` has every color and the type stacks as CSS variables. In Python,
   `scripts/brand.py` has the same values as constants (`b.BLUE`, `b.NAVY`, and so on). Use them instead of
   typing hex values.
-- **Font.** Geist is in `assets/fonts/`. Weight 400 for every word. Arial is the data face and needs no file.
+- **Font.** Geist, weight 400, for every word. It ships in `assets/fonts/`: `Geist-Variable.woff2` for
+  HTML and PDF, and `Geist-Regular.ttf` to install on a computer for Figma, Keynote or Word. Load it from
+  these files or embed it with `b.geist_face()`. Do not rely on Geist being installed on the reader's
+  machine, and do not substitute Inter, Helvetica or a system font. If Geist does not load, the piece is
+  not finished: fix the font before you show it. Arial is the data face and needs no file.
 - **Logo.** `assets/bluefyn-logo.svg`, or `b.logo()`, `b.symbol()` and `b.wordmark()` in any palette color.
   Never retype or redraw it.
 - **Graphics.** `scripts/brand.py` draws them as SVG: digit fields with records and verdict marks, the cube

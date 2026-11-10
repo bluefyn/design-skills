@@ -1,12 +1,19 @@
 {
 	"$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
 	"name": "bluefyn",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"description": "Bluefyn's design skills for Claude Code. The brand book and a design method, one pagers from any text, and two writing skills.",
 	"author": {
 		"name": "Bluefyn"
 	},
-	"homepage": "https://github.com/bluefyn/design-skills",
+	"homepage": "https://bluefyn.ai",
 	"repository": "https://github.com/bluefyn/design-skills",
-	"keywords": ["bluefyn", "brand", "one-pager", "design", "unslop"]
+	"keywords": [
+		"bluefyn",
+		"brand",
+		"one-pager",
+		"design",
+		"unslop"
+	],
+	"license": "MIT"
 }

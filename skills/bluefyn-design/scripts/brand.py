@@ -165,7 +165,7 @@ COS30, SIN30 = math.cos(math.radians(30)), 0.5
 
 
 def tower(box_w, box_h, cx, y_near, wl, wr, height, fs=6.0, seed=7, records=None, uid="t",
-          angle_l=30.0, angle_r=30.0, shades=(WHITE, "#DFDFDF", "#EFEFEF")):
+          angle_l=30.0, angle_r=30.0, shades=(WHITE, "#DFDFDF", "#EFEFEF"), ink=INK, rec_ink=None):
     """The block of records: three faces of one digit field. cx / y_near place
     the top corner nearest the viewer. At 30 degrees it is a true isometric
     block; shallower angles give the wide slab of the posters."""
@@ -189,7 +189,7 @@ def tower(box_w, box_h, cx, y_near, wl, wr, height, fs=6.0, seed=7, records=None
     o.append("</defs>")
     for tf, w, h, records_, paper, name in faces:
         o.append(f'<g transform="{tf}"><g clip-path="url(#{uid}-{name})">'
-                 f'{field(w, h, fs, rng, records_, paper=paper, uid=f"{uid}-{name}")}</g></g>')
+                 f'{field(w, h, fs, rng, records_, paper=paper, ink=ink, rec_ink=rec_ink, uid=f"{uid}-{name}")}</g></g>')
     o.append("</svg>")
     return "".join(o)
 

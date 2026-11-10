@@ -127,7 +127,8 @@ copy warning: headline: contains an em dash ('Every processor fee ...')
   first one that leaves enough room above the footer. `stretch=+Npt` means it had room to spare and put
   it between the sections.
 - `problem` lines are things to fix before the page goes out: too tall, a line too wide for its column, a
-  headline over three lines, a column title or a figure that wraps. Any problem sets `fits=NO`.
+  headline over three lines, a column title or a figure that wraps, or Geist missing from the PDF. Any
+  problem sets `fits=NO`.
 - `note` lines are advice: uneven columns, a one-line headline, a page with little on it.
 - `copy warning` lines point at punctuation or typed capitals that the brand leaves out. The quoted text
   is the start of the string, not the exact spot.

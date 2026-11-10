@@ -431,8 +431,15 @@ def build(content, mode, density, out_dir, slug, reuse=None):
     chrome(["--hide-scrollbars", "--window-size=816,1056", "--force-device-scale-factor=2", f"--screenshot={base}.png",
             "file://" + html_path])
     pages = page_count(base + ".pdf") if os.path.exists(base + ".pdf") else 0
+    geist = False
+    if os.path.exists(base + ".pdf"):
+        with open(base + ".pdf", "rb") as fh:
+            geist = b"Geist" in fh.read()
 
     problems = []
+    if not geist:
+        problems.append("Geist is not embedded in the PDF, so the text fell back to another typeface. Check that "
+                        "assets/fonts/Geist-Variable.woff2 exists in bluefyn-design, then rebuild.")
     if m["spare"] < need_spare:
         problems.append(f"too tall: the content is {round(need_spare - m['spare'], 1)}pt over even at '{chosen}'. "
                         f"Ask the author what to shorten or drop; do not cut copy on your own.")
